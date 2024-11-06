@@ -9,6 +9,13 @@ public class GunshipController : MonoBehaviour
     public GameObject cannonballPrefab;
     public float cannonballForce = 150f;
 
+    bool hitSomethingLeft;
+
+    private void Start()
+    {
+        
+    }
+
     void Update()
     {
         //Takes the mouse position in screen coordinates (pixels) and converts it to world coordinates
@@ -20,7 +27,9 @@ public class GunshipController : MonoBehaviour
         spawnCannonBall();
 
         Debug.DrawLine(leftCannon.position, mousePosition);
+        bool hitSomethingLeft = Physics2D.Raycast(leftCannon.position, mousePosition);
         Debug.DrawLine(rightCannon.position, mousePosition);
+        bool hitSomethingRight = Physics2D.Raycast(rightCannon.position, mousePosition);
     }
 
     //Given a target position and the transform of a cannon, aims that cannon at that target

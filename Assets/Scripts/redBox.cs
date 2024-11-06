@@ -14,7 +14,7 @@ public class redBox : MonoBehaviour
     }
     private void FixedUpdate()
     {
-       // redBoxRidgidBody velocity += (Vector2)(acceleration)
+      
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
